@@ -29,33 +29,44 @@ const App = () => {
   };
 
   return (
-    <div>
-      <form method="post" onSubmit={handleSubmit}>
+    <div className="flex items-center justify-center min-h-screen bg-[#EDEBDE]">
+    <form
+      method="post"
+      onSubmit={handleSubmit}
+      className="w-full max-w-sm p-6 space-y-4 bg-white rounded-lg shadow-md"
+    >
+      <div className="space-y-4">
         <div>
-          <div>
-            <input
-              name="nombre"
-              type="text"
-              placeholder="Ingrese el nombre"
-              ref={nombre}
-              required
-            />
-          </div>
-          <div>
-            <input
-              name="apellido"
-              type="text"
-              placeholder="Ingrese el apellido"
-              ref={apellido}
-              required
-            />
-          </div>
+          <input
+            name="nombre"
+            type="text"
+            placeholder="Ingrese el nombre"
+            ref={nombre}
+            required
+            className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:border-blue-300"
+          />
         </div>
         <div>
-          <button onClick={handleSubmit}>Enviar</button>
+          <input
+            name="apellido"
+            type="text"
+            placeholder="Ingrese el apellido"
+            ref={apellido}
+            required
+            className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:border-blue-300"
+          />
         </div>
-      </form>
-    </div>
+      </div>
+      <div className="flex justify-center mt-4">
+        <button
+          type="submit"
+          className="px-6 py-2 text-white bg-blue-500 rounded-lg shadow hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+        >
+          Enviar
+        </button>
+      </div>
+    </form>
+  </div>
   );
 };
 
